@@ -60,7 +60,7 @@ public abstract class AbstractPhone implements PhoneOS {
     @Override
     public void sendMessage(String contactName, String message) {
         if(message.length() <= 500 && contacts.containsKey(contactName)){
-            messages.computeIfAbsent(contactName, k -> new ArrayList<>()).add(message); //Change here
+            messages.computeIfAbsent(contactName, k -> new ArrayList<>()).add(message);
             baterrylife--;
             System.out.println("Message sent to " + contactName);
         } else {
